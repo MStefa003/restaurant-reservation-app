@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# 🍽️ Restaurant Reservation Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-v18-blue)
+![Node.js](https://img.shields.io/badge/Node.js-v16-green)
+![Express](https://img.shields.io/badge/Express-v4-lightgrey)
+![MariaDB](https://img.shields.io/badge/MariaDB-v10-orange)
 
-## Available Scripts
+A modern, full-stack web application for managing restaurant table reservations. This elegant platform provides a premium user experience with a responsive design, intuitive reservation workflow, and seamless restaurant discovery.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **User Authentication**
+  - Secure register/login system with JWT
+  - Enhanced profile page with modern UI design
+  - Persistent user sessions with localStorage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Restaurant Management**
+  - Browse and search restaurant listings
+  - View detailed restaurant information
+  - Sort and filter options
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Premium Reservation Experience**
+  - Elegant, dark-themed reservation form
+  - Interactive party size selection
+  - Special requests section with informational notes
+  - Instant confirmation with verification badges
 
-### `npm test`
+- **Reservation Management**
+  - View and manage reservation history
+  - Update or cancel existing reservations
+  - Clean, streamlined reservation cards
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Responsive Design**
+  - Mobile-friendly interface
+  - Consistent experience across devices
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- **React.js** - Component-based UI development
+- **React Router** - Navigation and routing
+- **Bootstrap** - UI framework for responsive design
+- **Axios** - Promise-based HTTP client
+- **JWT** - Secure authentication
+- **Context API** - State management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express** - Web framework
+- **MariaDB** - Relational database
+- **JWT** - Authentication tokens
+- **bcrypt** - Password hashing
+- **dotenv** - Environment variable management
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Setup Instructions
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v14 or later) and npm installed
+- MariaDB server installed and running
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Database Setup
+1. Create a MariaDB database:
+   ```sql
+   CREATE DATABASE restaurant_reservation_db;
+   ```
+2. Import the schema from `server/database.sql`:
+   ```
+   mysql -u root -p restaurant_reservation_db < server/database.sql
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Server Setup
+1. Navigate to the server directory:
+   ```
+   cd server
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Create a `.env` file with the following variables:
+   ```
+   PORT=5001
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=root
+   DB_NAME=restaurant_reservation_db
+   JWT_SECRET=your_jwt_secret_key
+   ```
+4. Start the server:
+   ```
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend Setup
+1. From the project root, install dependencies:
+   ```
+   npm install
+   ```
+2. Start the React application:
+   ```
+   npm start
+   ```
+3. The application will open in your browser at `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔄 Running the Full Application
 
-## Learn More
+You can run both the client and server concurrently:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Install all dependencies:
+   ```
+   npm install && cd server && npm install && cd ..
+   ```
+2. From the project root, run:
+   ```
+   npm run dev
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📱 Application Features
 
-### Code Splitting
+### User Interface
+The application features a professionally designed interface with:
+- Enhanced profile page with improved visual hierarchy
+- Premium dark-themed reservation form with circular icon badges
+- Responsive navigation with persistent user information
+- Elegant typography and consistent design language
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Reservation Workflow
+The reservation system provides a seamless experience:
+1. Browse available restaurants
+2. Select a restaurant to view details
+3. Choose date, time, and party size using the premium reservation form
+4. Add optional special requests
+5. Receive immediate confirmation
+6. Manage reservations through user dashboard
 
-### Analyzing the Bundle Size
+## 📡 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Authentication
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login a user
+- `GET /api/users/profile` - Get user profile information
 
-### Making a Progressive Web App
+### Restaurants
+- `GET /api/restaurants` - Get all restaurants
+- `GET /api/restaurants/:id` - Get restaurant by ID
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Reservations
+- `POST /api/reservations` - Create a new reservation
+- `GET /api/user/reservations` - Get user's reservations
+- `PUT /api/reservations/:id` - Update a reservation
+- `DELETE /api/reservations/:id` - Cancel a reservation
 
-### Advanced Configuration
+## 🔒 Security Considerations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- All passwords are hashed using bcrypt
+- Authentication is handled via JWT tokens
+- Environment variables protect sensitive database credentials
+- Frontend stores minimal user information in localStorage
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 License
+This project was created for educational purposes as part of a university assignment.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 👨‍💻 Author
+[Marios Stefanidis]
