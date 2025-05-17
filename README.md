@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <img src="https://i.imgur.com/YVXTCsx.png" alt="Restaurant Reservation Banner" width="600">
+  <strong style="font-size: 24px;">Modern Restaurant Reservation Platform</strong>
 </p>
 
 A modern, full-stack web application for managing restaurant table reservations. This elegant platform provides a premium user experience with a responsive design, intuitive reservation workflow, and seamless restaurant discovery.
@@ -251,20 +251,22 @@ This command starts both servers with a single command.
 - **Input Validation**: Server-side validation prevents malicious inputs
 - **Protected Routes**: Frontend and backend routes secured against unauthorized access
 
-## 📸 Screenshots
+## 📸 Key Visual Features
 
-<table>
-  <tr>
-    <td><img src="https://i.imgur.com/example1.png" alt="Home Page" width="100%"/></td>
-    <td><img src="https://i.imgur.com/example2.png" alt="Restaurant Listing" width="100%"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://i.imgur.com/example3.png" alt="Reservation Form" width="100%"/></td>
-    <td><img src="https://i.imgur.com/example4.png" alt="User Profile" width="100%"/></td>
-  </tr>
-</table>
+### Premium UI Components
 
-> *Note: Replace the example image URLs with actual screenshots of your application if available*
+- **Dark-themed Reservation Form** with elegant typography and circular icon badges
+- **Enhanced Profile Page** with improved visual hierarchy and user information display
+- **Restaurant Cards** with consistent styling and clear call-to-action buttons
+- **Streamlined Reservation Cards** with essential information prominently displayed
+
+### Responsive Design
+
+The application is fully responsive across devices:
+- Mobile-friendly navigation
+- Adaptive layouts for different screen sizes
+- Touch-optimized interactive elements
+- Consistent styling across all pages
 
 ## 📄 License
 
