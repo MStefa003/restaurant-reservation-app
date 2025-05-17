@@ -1,11 +1,31 @@
+<div align="center">
+
 # 🍽️ Restaurant Reservation Application
 
-![React](https://img.shields.io/badge/React-v18-blue)
-![Node.js](https://img.shields.io/badge/Node.js-v16-green)
-![Express](https://img.shields.io/badge/Express-v4-lightgrey)
-![MariaDB](https://img.shields.io/badge/MariaDB-v10-orange)
+[![React](https://img.shields.io/badge/React-v18-blue)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-v16-green)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-v4-lightgrey)](https://expressjs.com/)
+[![MariaDB](https://img.shields.io/badge/MariaDB-v10-orange)](https://mariadb.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-v5-purple)](https://getbootstrap.com/)
+
+</div>
+
+<p align="center">
+  <img src="https://i.imgur.com/YVXTCsx.png" alt="Restaurant Reservation Banner" width="600">
+</p>
 
 A modern, full-stack web application for managing restaurant table reservations. This elegant platform provides a premium user experience with a responsive design, intuitive reservation workflow, and seamless restaurant discovery.
+
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Tech Stack](#️-tech-stack)
+- [Installation Guide](#-installation-guide)
+- [Usage Instructions](#-usage-instructions)
+- [API Documentation](#-api-documentation)
+- [Security Features](#-security-features)
+- [Screenshots](#-screenshots)
+- [Author](#-author)
 
 ## ✨ Features
 
@@ -36,131 +56,222 @@ A modern, full-stack web application for managing restaurant table reservations.
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **React.js** - Component-based UI development
-- **React Router** - Navigation and routing
-- **Bootstrap** - UI framework for responsive design
-- **Axios** - Promise-based HTTP client
-- **JWT** - Secure authentication
-- **Context API** - State management
+<table>
+  <tr>
+    <td valign="top">
+      <h3>Frontend</h3>
+      <ul>
+        <li><strong>React.js</strong> - Component-based UI development</li>
+        <li><strong>React Router</strong> - Navigation and routing</li>
+        <li><strong>Bootstrap</strong> - UI framework for responsive design</li>
+        <li><strong>Axios</strong> - Promise-based HTTP client</li>
+        <li><strong>Context API</strong> - State management</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <h3>Backend</h3>
+      <ul>
+        <li><strong>Node.js</strong> - JavaScript runtime</li>
+        <li><strong>Express</strong> - Web framework</li>
+        <li><strong>MariaDB</strong> - Relational database</li>
+        <li><strong>JWT</strong> - Authentication tokens</li>
+        <li><strong>bcrypt</strong> - Password hashing</li>
+        <li><strong>dotenv</strong> - Environment variable management</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express** - Web framework
-- **MariaDB** - Relational database
-- **JWT** - Authentication tokens
-- **bcrypt** - Password hashing
-- **dotenv** - Environment variable management
-
-## 🚀 Setup Instructions
+## 🚀 Installation Guide
 
 ### Prerequisites
-- Node.js (v14 or later) and npm installed
-- MariaDB server installed and running
 
-### Database Setup
-1. Create a MariaDB database:
-   ```sql
-   CREATE DATABASE restaurant_reservation_db;
-   ```
-2. Import the schema from `server/database.sql`:
-   ```
-   mysql -u root -p restaurant_reservation_db < server/database.sql
-   ```
+Before you begin, ensure you have the following installed:
 
-### Server Setup
+- **Node.js** (v14 or later) and npm - [Download](https://nodejs.org/)
+- **MariaDB** (v10 or later) - [Download](https://mariadb.org/download/)
+- **Git** (optional, for cloning) - [Download](https://git-scm.com/downloads)
+
+### Step 1: Clone the Repository
+
+```bash
+# Clone the repository
+git clone https://github.com/MStefa003/restaurant-reservation-app.git
+
+# Navigate into the project directory
+cd restaurant-reservation-app
+```
+
+Alternatively, you can download the ZIP file from GitHub and extract it.
+
+### Step 2: Database Setup
+
+1. Start your MariaDB server
+2. Create a new database:
+
+```bash
+mysql -u root -p
+```
+
+```sql
+CREATE DATABASE restaurant_reservation_db;
+EXIT;
+```
+
+3. Import the database schema and initial data:
+
+```bash
+mysql -u root -p restaurant_reservation_db < server/database.sql
+```
+
+### Step 3: Backend Setup
+
 1. Navigate to the server directory:
-   ```
-   cd server
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Create a `.env` file with the following variables:
-   ```
-   PORT=5001
-   DB_HOST=localhost
-   DB_USER=root
-   DB_PASSWORD=root
-   DB_NAME=restaurant_reservation_db
-   JWT_SECRET=your_jwt_secret_key
-   ```
-4. Start the server:
-   ```
-   npm start
-   ```
 
-### Frontend Setup
-1. From the project root, install dependencies:
-   ```
-   npm install
-   ```
-2. Start the React application:
-   ```
-   npm start
-   ```
-3. The application will open in your browser at `http://localhost:3000`
+```bash
+cd server
+```
 
-## 🔄 Running the Full Application
+2. Install the backend dependencies:
 
-You can run both the client and server concurrently:
+```bash
+npm install
+```
 
-1. Install all dependencies:
-   ```
-   npm install && cd server && npm install && cd ..
-   ```
-2. From the project root, run:
-   ```
-   npm run dev
-   ```
+3. Create a `.env` file in the server directory with the following content:
 
-## 📱 Application Features
+```
+PORT=5001
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=restaurant_reservation_db
+JWT_SECRET=jwt_secret_key
+```
 
-### User Interface
-The application features a professionally designed interface with:
-- Enhanced profile page with improved visual hierarchy
-- Premium dark-themed reservation form with circular icon badges
-- Responsive navigation with persistent user information
-- Elegant typography and consistent design language
+> ⚠️ **Note**: Replace `root` with your actual MariaDB username and password if different. For production, use a strong, unique JWT_SECRET.
 
-### Reservation Workflow
-The reservation system provides a seamless experience:
-1. Browse available restaurants
-2. Select a restaurant to view details
-3. Choose date, time, and party size using the premium reservation form
-4. Add optional special requests
-5. Receive immediate confirmation
-6. Manage reservations through user dashboard
+4. Start the backend server:
 
-## 📡 API Endpoints
+```bash
+npm start
+```
 
-### Authentication
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login a user
-- `GET /api/users/profile` - Get user profile information
+The server should be running at http://localhost:5001
 
-### Restaurants
-- `GET /api/restaurants` - Get all restaurants
-- `GET /api/restaurants/:id` - Get restaurant by ID
+### Step 4: Frontend Setup
 
-### Reservations
-- `POST /api/reservations` - Create a new reservation
-- `GET /api/user/reservations` - Get user's reservations
-- `PUT /api/reservations/:id` - Update a reservation
-- `DELETE /api/reservations/:id` - Cancel a reservation
+1. Open a new terminal window and navigate back to the project root:
 
-## 🔒 Security Considerations
+```bash
+# If you're in the server directory
+cd ..
+```
 
-- All passwords are hashed using bcrypt
-- Authentication is handled via JWT tokens
-- Environment variables protect sensitive database credentials
-- Frontend stores minimal user information in localStorage
+2. Install the frontend dependencies:
 
----
+```bash
+npm install
+```
 
-## 📝 License
+3. Start the frontend development server:
+
+```bash
+npm start
+```
+
+The application should automatically open in your default browser at http://localhost:3000
+
+## 🔍 Usage Instructions
+
+### Running Both Frontend and Backend Simultaneously
+
+For development, you can run both the frontend and backend concurrently using:
+
+```bash
+# From the project root
+npm run dev
+```
+
+This command starts both servers with a single command.
+
+### User Registration and Login
+
+1. Navigate to the Register page
+2. Create an account with your name, email, and password
+3. Log in with your credentials
+4. Your session will persist across page refreshes
+
+### Making a Reservation
+
+1. Browse the list of available restaurants
+2. Click on a restaurant to view details
+3. Click "Make Reservation"
+4. Select date, time, party size, and add any special requests
+5. Submit the reservation form
+6. View your confirmed reservation in your profile
+
+### Managing Reservations
+
+1. Navigate to your profile page
+2. View all your current and past reservations
+3. Cancel or modify existing reservations as needed
+
+## 📡 API Documentation
+
+### Authentication Endpoints
+
+| Method | Endpoint | Description | Request Body | Success Response |
+|--------|----------|-------------|--------------|------------------|
+| POST | `/api/auth/register` | Register a new user | `{name, email, password}` | `{token, user}` |
+| POST | `/api/auth/login` | Login a user | `{email, password}` | `{token, user}` |
+| GET | `/api/users/profile` | Get user profile | Auth Header | `{user}` |
+
+### Restaurant Endpoints
+
+| Method | Endpoint | Description | Request Body | Success Response |
+|--------|----------|-------------|--------------|------------------|
+| GET | `/api/restaurants` | Get all restaurants | - | `[{restaurants}]` |
+| GET | `/api/restaurants/:id` | Get restaurant by ID | - | `{restaurant}` |
+
+### Reservation Endpoints
+
+| Method | Endpoint | Description | Request Body | Success Response |
+|--------|----------|-------------|--------------|------------------|
+| POST | `/api/reservations` | Create a reservation | `{restaurantId, date, time, people}` | `{reservation}` |
+| GET | `/api/user/reservations` | Get user reservations | Auth Header | `[{reservations}]` |
+| PUT | `/api/reservations/:id` | Update a reservation | `{date, time, people}` | `{reservation}` |
+| DELETE | `/api/reservations/:id` | Cancel a reservation | - | `{message}` |
+
+## 🔒 Security Features
+
+- **Password Security**: All passwords are hashed using bcrypt before storage
+- **JWT Authentication**: Secure API access with JSON Web Tokens
+- **Environment Variables**: Sensitive database credentials protected
+- **Input Validation**: Server-side validation prevents malicious inputs
+- **Protected Routes**: Frontend and backend routes secured against unauthorized access
+
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td><img src="https://i.imgur.com/example1.png" alt="Home Page" width="100%"/></td>
+    <td><img src="https://i.imgur.com/example2.png" alt="Restaurant Listing" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/example3.png" alt="Reservation Form" width="100%"/></td>
+    <td><img src="https://i.imgur.com/example4.png" alt="User Profile" width="100%"/></td>
+  </tr>
+</table>
+
+> *Note: Replace the example image URLs with actual screenshots of your application if available*
+
+## 📄 License
+
 This project was created for educational purposes as part of a university assignment.
 
 ## 👨‍💻 Author
-[Marios Stefanidis]
+
+**Marios Stefanidis**
+
+For questions or feedback, please open an issue on the GitHub repository.
