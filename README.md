@@ -124,6 +124,4 @@ npm run dev
 - Database: MariaDB for data storage
 - Authentication: JWT-based user authentication
 
-## Author
-
-Marios Stefanidis
+- 
